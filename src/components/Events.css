@@ -1,0 +1,92 @@
+/* Events container styles */
+.events-container {
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  /* Events header */
+  .events-header {
+    font-size: 32px;
+    color: #ff4081;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* List of events */
+  .events-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Each event item */
+  .event-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  .event-item:hover {
+    background-color: #ffe0e6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Event name */
+  .event-name {
+    font-size: 24px;
+    color: #ff4081;
+    font-weight: bold;
+  }
+  
+  /* Event date */
+  .event-date {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+  }
+  
+  /* Event description */
+  .event-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .events-header {
+      font-size: 28px;
+    }
+  
+    .event-name {
+      font-size: 20px;
+    }
+  
+    .event-date {
+      font-size: 16px;
+    }
+  
+    .event-description {
+      font-size: 14px;
+    }
+  }
+  

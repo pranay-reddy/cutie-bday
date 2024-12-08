@@ -1,0 +1,128 @@
+/* Global styles */
+body {
+  font-family: 'Pacifico', cursive, sans-serif;
+  background-color: #fce4ec;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto; /* Prevent scrolling due to confetti */
+}
+
+h1, h2, h3 {
+  font-family: 'Pacifico', cursive;
+  color: #ff4081;
+  text-align: center;
+}
+
+/* Link styles */
+a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff4081;
+}
+
+/* Styling for smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body content styles */
+.content {
+  margin-top: 20vh; /* Position the birthday message in the center */
+  text-align: center;
+}
+
+.content h1 {
+  font-size: 50px;
+  color: #ff4081;
+  animation: textBounce 2s ease-in-out infinite, fadeIn 2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes textBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content p {
+  font-size: 20px;
+  color: #333;
+  margin-top: 15px;
+  animation: fadeIn 3s ease-out;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 1000;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  margin: 0 20px;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  transition: transform 0.2s, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #ff4081;
+  transform: scale(1.1);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff4081;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
