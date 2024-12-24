@@ -1,0 +1,23 @@
+.message-container {
+    width: 100%; /* Make the container take up the entire width */
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for aesthetics */
+    box-sizing: border-box; /* Ensures padding does not affect width */
+  }
+  
+  .message-text {
+    font-size: 1.5rem;
+    color:rgb(177, 244, 244);
+    font-family: 'Pacifico', cursive, sans-serif;
+    letter-spacing: 1px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    padding-right:100px;
+    padding-left:100px;
+    margin-top: 200px; /* Add space above the message text itself */
+  }
+  

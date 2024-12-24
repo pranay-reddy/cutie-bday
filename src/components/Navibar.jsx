@@ -20,6 +20,7 @@ const Navbar = () => {
         <li><Link to="/" className="navbar-item">Home</Link></li>  {/* Link to Home page */}
         <li><Link to="/events" className="navbar-item">Events</Link></li>  {/* Link to Events page */}
         <li><Link to="/pic-dump" className="navbar-item">Pic Dump</Link></li>  {/* Link to Pic Dump page */}
+        <li><Link to="/BDay" className="navbar-item">Birthday</Link></li>  {/* Link to Birthday page */}
       </ul>
     </nav>
   );

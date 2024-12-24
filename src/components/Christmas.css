@@ -1,0 +1,156 @@
+/* Christmas container styles */
+.christmas-container {
+    position: relative;
+    height: 650px; /* Use 100% of the viewport height */
+    overflow: hidden;
+    padding-top: 7rem;
+    background: linear-gradient(180deg, hsl(210, 88%, 20%), hsl(210, 70%, 58%));
+  }
+  
+  /* Christmas header styling */
+  .christmas-header {
+    font-size: 3rem;
+    color:white;
+    margin-top: 1.5rem;
+    z-index: 10;  /* Ensure it's on top of images */
+    text-align: center;
+  }
+  
+  /* Christmas message styling */
+  .christmas-message {
+    font-size: 1.5rem;
+    color: cyan;
+    margin-bottom: 30px;
+    z-index:10;  /* Ensure it's on top of images */
+    text-align:center;
+  }
+  
+  /* Image positioning */
+  .christmas-container img {
+    position: absolute;
+    display: block; /* Ensure images are treated as block elements */
+    margin-left: auto; /* Center image horizontally */
+    margin-right: auto; /* Center image horizontally */
+    object-fit: contain;
+  }
+  
+  .home__mountain-1,
+  .home__snow {
+    bottom: 0;
+    width: 100%; /* Stretch image to fit the container width */
+    z-index:5;
+  }
+    
+  /* Moon */
+.home__moon {
+    width: 500px;
+    bottom: 8.5rem; /* Final position */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: riseFromBottomAndCenter 4s ease-in-out forwards;
+    z-index: 1;
+}
+
+/* Village */
+.home__village {
+    width: 550px;
+    bottom: 5rem; /* Final position */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: riseFromBottomAndCenter 4s ease-in-out forwards;
+    z-index: 4;
+}
+
+/* Pine */
+.home__pine {
+    width: 550px;
+    bottom: 8rem; /* Final position */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: riseFromBottomAndCenter 4s ease-in-out forwards;
+    z-index: 3;
+}
+
+/* Mountain 2 */
+.home__mountain-2 {
+    bottom: 0.2rem; /* Final position */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    animation: riseFromBottom 4s ease-in-out forwards;
+    z-index: 2;
+}
+
+/* Mountain 3 */
+.home__mountain-3 {
+    bottom: 0.5rem; /* Final position */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    animation: dropFromTopAndCenter 4s ease-in-out forwards;
+    z-index: 2;
+}
+
+/* Trineo */
+.home__trineo {
+    width: 250px;
+    bottom: 22rem; /* Final position */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: dropFromTopAndCenter 4s ease-in-out forwards;
+    z-index: 6;
+}
+
+/* Keyframes for elements rising from the bottom with horizontal centering */
+@keyframes riseFromBottomAndCenter {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) translateX(50px); /* Start below the screen and slightly off-center horizontally */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%); /* End centered at the defined position */
+    }
+}
+
+/* Keyframes for elements dropping from the top with horizontal centering */
+@keyframes dropFromTopAndCenter {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) translateX(-50px); /* Start above the screen and slightly off-center horizontally */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%); /* End centered at the defined position */
+    }
+}
+
+/* Keyframes for elements rising from the bottom */
+@keyframes riseFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100px); /* Start below the screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at its defined position */
+    }
+}
+
+/* Keyframes for elements dropping from the top */
+@keyframes dropFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* Start above the screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at its defined position */
+    }
+}

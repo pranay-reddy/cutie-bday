@@ -1,0 +1,29 @@
+@keyframes fall {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
+  .snowflake {
+    position: fixed;
+    top: -30px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 1000;
+    width: 30px; /* Snowflake size */
+    height: 30px; /* Snowflake size */
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Strong glow effect */
+    filter: brightness(3) drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)); /* Increased brightness and stronger shadow */
+    opacity: 1; /* Full opacity for a more intense glow */
+  }
+  
+  /* Hover effect to increase the glow even further */
+  .snowflake:hover {
+    filter: brightness(4) drop-shadow(0 0 30px rgba(255, 255, 255, 1)); /* Even brighter and larger glow */
+  }
+  
