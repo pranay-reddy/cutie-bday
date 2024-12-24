@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./snowfall.css"; // Ensure your CSS is imported
+import "./Snowfall.css"; // Ensure your CSS is imported
 
 const Snowfall = () => {
   useEffect(() => {
@@ -14,9 +14,7 @@ const Snowfall = () => {
       snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // Random size
       snowflake.style.opacity = Math.random() * 0.5 + 0.5; // Random opacity
       snowflake.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
-
       snowflake.style.backgroundImage = "url('/img/snow-img.png')";
-
       snowflake.style.backgroundSize = "contain";
       snowflake.style.backgroundRepeat = "no-repeat";
       snowflake.style.width = "30px"; // Snowflake size
