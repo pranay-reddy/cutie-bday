@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    background-image: url('./pics/newyear.jpg'); /* Adjust path to match your image location */
+    background-image: url('/pics/newyear.jpg'); /* Adjust path to match your image location */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
