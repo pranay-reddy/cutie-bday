@@ -21,6 +21,7 @@ const Navbar = () => {
         <li><Link to="/events" className="navbar-item">Events</Link></li>  {/* Link to Events page */}
         <li><Link to="/pic-dump" className="navbar-item">Pic Dump</Link></li>  {/* Link to Pic Dump page */}
         <li><Link to="/BDay" className="navbar-item">Birthday</Link></li>  {/* Link to Birthday page */}
+        <li><Link to="/Christmas" className="navbar-item">Christmas</Link></li>  {/* Link to Birthday page */}
       </ul>
     </nav>
   );

@@ -154,3 +154,60 @@
         transform: translateY(0); /* End at its defined position */
     }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .christmas-header {
+        font-size: 2.5rem;
+    }
+
+    .christmas-message {
+        font-size: 1.2rem;
+    }
+
+    .home__moon {
+        width: 35%;
+    }
+
+    .home__trineo {
+        width: 30%;
+    }
+
+    .home__mountain-2,
+    .home__mountain-3 {
+        width: 60%;
+    }
+
+    .home__village,
+    .home__pine {
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .christmas-header {
+        font-size: 2rem;
+    }
+
+    .christmas-message {
+        font-size: 1rem;
+    }
+
+    .home__moon {
+        width: 40%;
+    }
+
+    .home__trineo {
+        width: 35%;
+    }
+
+    .home__mountain-2,
+    .home__mountain-3 {
+        width: 70%;
+    }
+
+    .home__village,
+    .home__pine {
+        width: 60%;
+    }
+}

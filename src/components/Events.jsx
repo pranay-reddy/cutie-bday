@@ -3,11 +3,12 @@ import './Events.css';  // Assuming you have your styles in Events.css
 
 const Events = () => {
   const events = [
-    { id: 1, name: "Cutie Birthday", date: "2024-12-08", description: "Happy birthday langg may this year be full of happiness" },
-    { id: 2, name: "Christmas", date: "2024-12-25", description: " Where is my ampao" },
-    { id: 3, name: "New year", date: "2025-01-01", description: "Give me new year kisssss ." },
-    { id: 4, name: "Anniversary", date: "2025-02-07", description: "Happy Anniversary cutipiee ." },
-    { id: 5, name: "Valentines", date: "2025-02-14", description: "Happy valentines my adorable wifey ^3^ ." },
+    
+    { id: 1, name: "New year", date: "2025-01-01", description: "Give me new year kisssss ." },
+    { id: 2, name: "Anniversary", date: "2025-02-07", description: "Happy Anniversary cutipiee ." },
+    { id: 3, name: "Valentines", date: "2025-02-14", description: "Happy valentines my adorable wifey ^3^ ." },
+    { id: 4, name: "Cutie Birthday", date: "2025-12-08", description: "Happy birthday langg may this year be full of happiness" },
+    { id: 5, name: "Christmas", date: "2025-12-25", description: " Where is my ampao" },
   ];
 
   return (

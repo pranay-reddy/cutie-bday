@@ -1,0 +1,127 @@
+/* NewYearCountdown.css */
+.countdown-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('../public/pics/newyear.jpg'); /* Adjust path to match your image location */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .countdown-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+  }
+  
+  .year-display {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 800px;
+  }
+  
+  .time-block {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .time-block:hover {
+    transform: translateY(-5px);
+  }
+  
+  .time-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .time-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .wish-slider {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .wish-text {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+    font-weight: 500;
+    animation: fadeInOut 3s infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(10px); }
+    20%, 80% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .countdown-content {
+      padding: 2rem 1rem;
+    }
+  
+    .year-display {
+      font-size: 3rem;
+    }
+  
+    .countdown-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  
+    .time-value {
+      font-size: 2.5rem;
+    }
+  
+    .time-unit {
+      font-size: 0.875rem;
+    }
+  
+    .wish-text {
+      font-size: 1.25rem;
+    }
+  }
