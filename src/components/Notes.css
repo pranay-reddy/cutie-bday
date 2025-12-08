@@ -1,0 +1,130 @@
+/* Notes container */
+.notes-container {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Notes header */
+.notes-header {
+  font-size: 32px;
+  color: #ff4081;
+  margin-bottom: 20px;
+  font-weight: bold;
+  animation: fadeIn 2s ease-out;
+}
+
+/* Input and button wrapper */
+.notes-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Input for new note */
+.notes-input {
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ff4081;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.notes-input:focus {
+  border-color: #f50057;
+}
+
+/* Submit button */
+.notes-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.notes-button:hover {
+  background-color: #f50057;
+  transform: scale(1.05);
+}
+
+/* Notes grid */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Individual note card */
+.note-card {
+  position: relative;
+  background-color: #fce4ec;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  word-wrap: break-word;
+  text-align: center;  /* Center aligned text */
+  min-height: 80px;
+  transition: transform 0.2s ease;
+}
+
+.note-card:hover {
+  transform: scale(1.02);
+}
+
+/* Note content */
+.note-content {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Delete button */
+.note-delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  display: none;  /* Hide by default */
+}
+
+/* Show delete button only when hovering over the note card */
+.note-card:hover .note-delete {
+  display: inline-block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .notes-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .notes-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

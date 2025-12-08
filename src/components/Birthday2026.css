@@ -1,0 +1,108 @@
+/* Main container */
+.birthday2026-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #fce4ec;
+  font-family: 'Pacifico', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 40px 20px;
+}
+
+/* Content */
+.birthday2026-content {
+  position: relative;
+  text-align: center;
+  z-index: 20;
+  max-width: 800px;
+}
+
+/* Title */
+.birthday2026-title {
+  font-size: 50px;
+  color: #ff4081;
+  animation: textBounce 2s ease-in-out infinite, fadeIn 2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.birthday2026-subtitle {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 25px;
+  animation: fadeIn 3s ease-out;
+  line-height: 1.5;
+}
+
+/* Cake image */
+.birthday2026-image-wrapper {
+  margin: 20px 0;
+}
+.birthday2026-image {
+  width: 70%;
+  max-width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Note */
+.birthday2026-note {
+  font-size: 22px;
+  color: #444;
+  margin-top: 20px;
+  line-height: 1.6;
+  animation: fadeIn 3.5s ease-out;
+}
+
+/* Keyframes */
+@keyframes textBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Carousel */
+.carousel-container {
+  position: relative;
+  margin: 30px 0;
+}
+.carousel-image {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  animation: fadeIn 1s ease-out;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 30;
+}
+.carousel-btn.prev { left: -50px; }
+.carousel-btn.next { right: -50px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .birthday2026-title { font-size: 40px; }
+  .birthday2026-subtitle, .birthday2026-note { font-size: 18px; }
+  .birthday2026-image { width: 80%; }
+  .carousel-image { width: 80%; }
+  .carousel-btn.prev { left: -30px; }
+  .carousel-btn.next { right: -30px; }
+}

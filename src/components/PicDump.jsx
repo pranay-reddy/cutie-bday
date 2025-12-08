@@ -1,36 +1,75 @@
-import React, { useState } from 'react';
-import './PicDump.css';  // Assuming you have your styles in PicDump.css
+// src/components/PicDump.jsx
+import React, { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient";
+import { useAuth } from "../context/AuthContext";
+import "./PicDump.css";
 
 const PicDump = () => {
-  const [images] = useState([
-    { id: 1, src: '/pics/cutie1.png', alt: 'Pic 1' },
-    { id: 2, src: '/pics/cutie2.png', alt: 'Pic 2' },
-    { id: 3, src: '/pics/cutie3.png', alt: 'Pic 3' },
-    { id: 4, src: '/pics/cutie4.png', alt: 'Pic 4' },
-    { id: 5, src: '/pics/cutie5.png', alt: 'Pic 5' },
-    { id: 6, src: '/pics/cutie6.png', alt: 'Pic 6' },
-    { id: 7, src: '/pics/cutie7.png', alt: 'Pic 7' },
-    { id: 8, src: '/pics/cutie8.png', alt: 'Pic 8' },
-    { id: 9, src: '/pics/cutie9.png', alt: 'Pic 9' },
-    { id: 10, src: '/pics/cutie10.png', alt: 'Pic 10' },
-    { id: 11, src: '/pics/cutie11.png', alt: 'Pic 11' },
-    { id: 12, src: '/pics/cutie12.png', alt: 'Pic 12' },
-    { id: 13, src: '/pics/cutie13.png', alt: 'Pic 13' },
-    { id: 14, src: '/pics/cutie14.png', alt: 'Pic 14' },
-    { id: 15, src: '/pics/cutie15.png', alt: 'Pic 15' },
-    { id: 16, src: '/pics/cutie16.png', alt: 'Pic 16' },
-    { id: 17, src: '/pics/cutie17.png', alt: 'Pic 17' },
-    
-    // Add more images here
-  ]);
+  const { user } = useAuth();
+  const [images, setImages] = useState([]);
+  const [uploading, setUploading] = useState(false);
+
+  // Fetch images from private bucket and generate signed URLs
+  const fetchImages = async () => {
+    const { data, error } = await supabase.storage.from("images").list("", { limit: 100 });
+    if (error) {
+      console.log("Error fetching images:", error.message);
+      return;
+    }
+
+    // Generate signed URLs for private access
+    const imagesWithUrls = await Promise.all(
+      data.map(async (img) => {
+        const { data: urlData, error: urlError } = await supabase.storage
+          .from("images")
+          .createSignedUrl(img.name, 60 * 60); // URL valid for 1 hour
+        if (urlError) {
+          console.error("Error creating signed URL:", urlError);
+          return null;
+        }
+        return { ...img, url: urlData.signedUrl };
+      })
+    );
+
+    setImages(imagesWithUrls.filter(Boolean));
+  };
+
+  useEffect(() => {
+    if (user) fetchImages();
+  }, [user]);
+
+  // Upload image
+  const uploadImage = async (e) => {
+    const file = e.target.files[0];
+    if (!file || !user) return;
+
+    setUploading(true);
+    const fileName = `${user.id}-${Date.now()}-${file.name}`;
+    const { error } = await supabase.storage.from("images").upload(fileName, file);
+    setUploading(false);
+
+    if (error) alert("Upload failed: " + error.message);
+    else fetchImages();
+  };
+
+  if (!user) return <p>Please log in to see the gallery.</p>;
 
   return (
     <div className="pic-dump-container">
       <h1 className="pic-dump-header">Our Picture Gallery</h1>
+
+      <input
+        type="file"
+        onChange={uploadImage}
+        disabled={uploading}
+        style={{ marginBottom: "20px" }}
+      />
+      {uploading && <p>Uploading...</p>}
+
       <div className="pic-dump-grid">
-        {images.map((image) => (
-          <div key={image.id} className="pic-dump-item">
-            <img src={image.src} alt={image.alt} className="pic-dump-image" />
+        {images.map((img) => (
+          <div key={img.name} className="pic-dump-item">
+            <img src={img.url} alt={img.name} className="pic-dump-image" />
           </div>
         ))}
       </div>

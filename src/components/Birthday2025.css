@@ -1,0 +1,84 @@
+/* Full page container */
+.birthday2025-container {
+  font-family: 'Pacifico', cursive, sans-serif;
+  background-color: #fce4ec;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  overflow: hidden; /* allow confetti to work */
+  width: 100%;
+  text-align: center !important; /* HARD OVERRIDE global left-align */
+}
+
+/* Content wrapper */
+.birthday2025-content {
+  margin-top: 20vh;
+  text-align: center !important; /* override again to be safe */
+  width: 100%;
+}
+
+/* Main heading */
+.birthday-message {
+  font-size: 50px;
+  color: #ff4081;
+  animation: textBounce 2s ease-in-out infinite, fadeIn 2s ease-out;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+  text-align: center !important;
+  margin: 0 auto;
+}
+
+/* Sub-message */
+.message-details {
+  font-size: 20px;
+  color: #333;
+  margin-top: 15px;
+  animation: fadeIn 3s ease-out;
+  text-align: center !important;
+  width: 100%;
+}
+
+/* Cake container */
+.cake-image-container {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Cake image */
+.birthday-cake {
+  width: 80%;
+  max-width: 350px !important;  /* Force correct cake size */
+  height: auto !important;      /* Prevent stretching */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Bounce */
+@keyframes textBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Fade */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .birthday-message {
+    font-size: 40px;
+  }
+  .message-details {
+    font-size: 18px;
+  }
+  .birthday-cake {
+    width: 90%;
+    max-width: 300px !important;
+  }
+}

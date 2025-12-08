@@ -1,0 +1,43 @@
+/* Wrapper container */
+.birthday-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: none;          /* Do NOT override child backgrounds */
+  display: block;            /* Do NOT use flex/grid - it breaks centering */
+  overflow: visible !important;
+}
+
+/* Year selector */
+.year-selector {
+  position: fixed;           /* Always visible on the screen */
+  top: 80px;                 /* Below navbar */
+  right: 20px;               /* Right corner */
+  z-index: 9999;             /* Ensure it is NOT hidden behind anything */
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  font-family: sans-serif;
+}
+
+.year-selector label {
+  font-size: 14px;
+  margin-right: 6px;
+  color: #333;
+}
+
+.year-selector select {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Make sure birthday components are not affected by wrapper */
+.birthday-wrapper > *:not(.year-selector) {
+  position: relative;
+  z-index: 1;
+}

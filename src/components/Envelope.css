@@ -1,0 +1,141 @@
+.envelope-container {
+  position: relative;
+  margin: 40px 0;
+  z-index: 30;
+  text-align: center;
+}
+
+.envelope {
+  width: 140px;
+  height: 90px;
+  margin: 0 auto;
+  cursor: pointer;
+  perspective: 600px;
+  position: relative;
+}
+
+/* Envelope body */
+.body {
+  width: 140px;
+  height: 90px;
+  background: linear-gradient(145deg, #f8cde1, #f7b6d8); /* subtle gradient for depth */
+  position: relative;
+  border-radius: 5px;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Flap pointing upward */
+.flap {
+  position: absolute;
+  bottom: 50%; /* position above the envelope body */
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-top: 45px solid #ff85c2; /* triangle pointing up */
+  transform-origin: top center;
+  transition: transform 0.6s ease;
+  z-index: 2;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Optional: heart decoration on flap */
+.flap::after {
+  content: "💌";
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+}
+
+/* Flap open animation */
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+/* Instruction text */
+.envelope-instruction {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ff4081;
+}
+
+/* Letter Modal */
+.letter-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.letter-content {
+  background-color: #fff0f5;
+  padding: 25px 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  animation: slideDown 0.6s ease-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: #ff4081;
+  color: white;
+  border: none;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .letter-content {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .envelope {
+    width: 120px;
+    height: 80px;
+  }
+
+  .flap {
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 40px solid #ff85c2;
+  }
+
+  .body {
+    width: 120px;
+    height: 80px;
+  }
+}
