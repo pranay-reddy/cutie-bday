@@ -9,7 +9,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*\\.(js|jsx|ts|tsx|css|map|json|ico|png|svg|txt))",
+      "src": "/(.*\\.(js|jsx|ts|tsx|css|map|json|ico|png|svg|txt|jpg|jpeg|gif))",
       "headers": { "cache-control": "max-age=0" },
       "dest": "/$1"
     },
