@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useAuth } from "./context/AuthContext";
-import "./Temp.css";
+import "./App.css";
 
 import Navbar from "./components/Navibar";
 import ProfileBar from "./components/ProfileBar";
@@ -11,7 +11,7 @@ import PicDump from "./components/PicDump";
 import Home from "./components/Home";
 import DChristmas from "./components/DChristmas";
 import Auth from "./components/Auth";
-import Notes from "./components/notes";
+import Notes from "./components/Notes";
 
 function App() {
   const auth = useAuth();
@@ -47,7 +47,7 @@ function App() {
           <Route path="/pic-dump" element={<PicDump />} />
           <Route path="/BDayWrapper" element={<Birthday />} />
           <Route path="/Christmas" element={<DChristmas />} />
-          <Route path="/notes" element={<Notes />} />
+          <Route path="/Notes" element={<Notes />} />
 
         </Routes>
       </div>
