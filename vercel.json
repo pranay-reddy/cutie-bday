@@ -8,6 +8,11 @@
     }
   ],
   "routes": [
+    {
+      "src": "/(.*\\.(js|jsx|ts|tsx|css|map|json|ico|png|svg|txt))",
+      "headers": { "cache-control": "max-age=0" },
+      "dest": "/$1"
+    },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
