@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./canvasHearts.css";
+import "./CanvasHearts.css";
 
 export default function CanvasHearts() {
   const canvasRef = useRef(null);
